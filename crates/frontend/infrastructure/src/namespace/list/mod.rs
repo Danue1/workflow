@@ -52,7 +52,7 @@ impl domain::find_namespaces::Port for Adapter {
         let namespaces = rows
             .into_iter()
             .map(|row| domain::find_namespaces::Namespace {
-                id: row.namespace_id,
+                namespace_id: row.namespace_id,
                 name: row.name,
                 created_at: row.created_at,
             })

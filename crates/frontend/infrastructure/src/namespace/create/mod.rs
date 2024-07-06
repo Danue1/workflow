@@ -45,7 +45,7 @@ impl domain::find_namespace_by_name::Port for Adapter {
 
         match row {
             Ok(Some(row)) => Ok(Some(domain::find_namespace_by_name::Namespace {
-                id: row.namespace_id,
+                namespace_id: row.namespace_id,
             })),
             Ok(None) => Ok(None),
             Err(error) => Err(domain::find_namespace_by_name::Error::Connection(

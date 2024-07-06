@@ -1,5 +1,6 @@
 pub mod create;
 pub mod list;
+pub mod one;
 pub mod remove;
 
 #[derive(Clone)]
@@ -29,5 +30,11 @@ impl NamespaceService {
         let pool = self.pool.clone();
 
         list::execute(input, pool).await
+    }
+
+    pub async fn one(&self, input: one::Input) -> Result<one::Output, one::Error> {
+        let pool = self.pool.clone();
+
+        one::execute(input, pool).await
     }
 }
