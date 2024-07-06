@@ -1,0 +1,3 @@
+DROP EXTENSION IF EXISTS "uuid-ossp";
+
+DROP EXTENSION IF EXISTS "pg_uuidv7";

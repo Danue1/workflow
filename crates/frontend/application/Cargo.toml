@@ -1,0 +1,13 @@
+[package]
+name = "application"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+const_num = { path = "../../tools/const_num" }
+infrastructure = { path = "../infrastructure" }
+postgresql = { path = "../../external/postgresql" }
+rocket = { workspace = true }
+serde = { workspace = true }
+tokio = { workspace = true }
+uuid = { workspace = true }

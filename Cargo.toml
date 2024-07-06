@@ -1,0 +1,29 @@
+[workspace]
+resolver = "2"
+members = [
+  "crates/external/database",
+  "crates/external/postgresql",
+  "crates/frontend/application",
+  "crates/frontend/domain",
+  "crates/frontend/infrastructure",
+  "crates/tools/const_num",
+]
+
+[workspace.dependencies]
+anyhow = "1.0.83"
+chrono = { version = "0.4.38", features = ["serde"] }
+cron = "0.12.1"
+dotenvy = "0.15.7"
+rocket = { version = "0.5.1", features = ["json"] }
+serde = { version = "1.0.201", features = ["derive"] }
+sqlx = { version = "0.7.4", features = [
+  "chrono",
+  "json",
+  "postgres",
+  "macros",
+  "runtime-tokio",
+  "uuid",
+] }
+thiserror = "1.0.60"
+tokio = { version = "1.38.0", features = ["full"] }
+uuid = { version = "1.8.0", features = ["serde", "v7"] }

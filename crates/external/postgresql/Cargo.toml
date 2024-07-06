@@ -1,0 +1,8 @@
+[package]
+name = "postgresql"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+database = { path = "../database" }
+sqlx = { workspace = true }
