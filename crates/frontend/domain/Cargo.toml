@@ -5,6 +5,8 @@ edition = "2021"
 
 [dependencies]
 anyhow = { workspace = true }
+chrono = { workspace = true }
+new_types = { path = "../../tools/new_types" }
 postgresql = { path = "../../external/postgresql" }
 tokio = { workspace = true }
 uuid = { workspace = true }

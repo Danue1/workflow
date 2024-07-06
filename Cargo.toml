@@ -7,6 +7,7 @@ members = [
   "crates/frontend/domain",
   "crates/frontend/infrastructure",
   "crates/tools/const_num",
+  "crates/tools/new_types",
 ]
 
 [workspace.dependencies]

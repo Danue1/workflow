@@ -1,11 +1,13 @@
 [package]
-name = "application"
+name = "frontend-application"
 version = "0.1.0"
 edition = "2021"
 
 [dependencies]
 const_num = { path = "../../tools/const_num" }
+chrono = { workspace = true }
 infrastructure = { path = "../infrastructure" }
+new_types = { path = "../../tools/new_types" }
 postgresql = { path = "../../external/postgresql" }
 rocket = { workspace = true }
 serde = { workspace = true }

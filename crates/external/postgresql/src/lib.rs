@@ -14,6 +14,7 @@ impl ConnectionPool {
 impl std::ops::Deref for ConnectionPool {
     type Target = sqlx::PgPool;
 
+    #[inline]
     fn deref(&self) -> &Self::Target {
         &self.0
     }

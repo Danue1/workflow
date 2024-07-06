@@ -1,14 +1,8 @@
-pub struct Service<R>
-where
-    R: super::Repository,
-{
+pub struct Service<R> {
     repository: R,
 }
 
-impl<R> Service<R>
-where
-    R: super::Repository,
-{
+impl<R> Service<R> {
     #[inline]
     pub const fn new(repository: R) -> Self {
         Self { repository }
