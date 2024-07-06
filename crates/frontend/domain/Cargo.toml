@@ -6,4 +6,5 @@ edition = "2021"
 [dependencies]
 anyhow = { workspace = true }
 postgresql = { path = "../../external/postgresql" }
+tokio = { workspace = true }
 uuid = { workspace = true }
