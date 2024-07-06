@@ -10,13 +10,13 @@ pub enum Error {
 }
 
 pub fn mount(rocket: Rocket<Build>) -> Rocket<Build> {
-    let rocket = rocket.mount("/", routes![remove_namespace]);
+    let rocket = rocket.mount("/", routes![namespace_remove]);
 
     rocket
 }
 
 #[delete("/api/namespaces/<namespace_id>")]
-pub async fn remove_namespace(
+pub async fn namespace_remove(
     service: &State<infrastructure::namespace::NamespaceService>,
     namespace_id: &str,
 ) -> Result<NoContent, Error> {

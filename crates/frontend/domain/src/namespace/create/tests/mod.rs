@@ -59,7 +59,9 @@ async fn already_exists() {
             &self,
             input: find_namespace_by_name::Input,
         ) -> Result<find_namespace_by_name::Output, find_namespace_by_name::Error> {
-            Ok(Some(find_namespace_by_name::Namespace { id: NAMESPACE_ID }))
+            Ok(Some(find_namespace_by_name::Namespace {
+                namespace_id: NAMESPACE_ID,
+            }))
         }
     }
 

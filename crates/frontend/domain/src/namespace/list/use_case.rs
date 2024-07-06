@@ -19,7 +19,7 @@ pub struct Input {
 pub type Output = Vec<Namespace>;
 
 pub struct Namespace {
-    pub id: Uuid,
+    pub namespace_id: Uuid,
     pub name: String,
     pub created_at: chrono::DateTime<chrono::Utc>,
 }

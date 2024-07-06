@@ -21,13 +21,13 @@ pub enum Error {
 }
 
 pub fn mount(rocket: Rocket<Build>) -> Rocket<Build> {
-    let rocket = rocket.mount("/", routes![create_namespace]);
+    let rocket = rocket.mount("/", routes![namespace_create]);
 
     rocket
 }
 
 #[post("/api/namespaces", data = "<body>")]
-pub async fn create_namespace(
+pub async fn namespace_create(
     service: &State<infrastructure::namespace::NamespaceService>,
     body: Json<Body>,
 ) -> Result<Json<Response>, Error> {

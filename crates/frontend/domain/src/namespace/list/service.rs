@@ -23,7 +23,7 @@ where
         let namespaces = namespaces
             .into_iter()
             .map(|namespace| super::Namespace {
-                id: namespace.id,
+                namespace_id: namespace.namespace_id,
                 name: namespace.name,
                 created_at: namespace.created_at,
             })

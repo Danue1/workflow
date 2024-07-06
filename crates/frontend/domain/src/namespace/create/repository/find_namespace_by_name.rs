@@ -18,7 +18,7 @@ pub struct Input {
 pub type Output = Option<Namespace>;
 
 pub struct Namespace {
-    pub id: Uuid,
+    pub namespace_id: Uuid,
 }
 
 #[derive(Debug)]

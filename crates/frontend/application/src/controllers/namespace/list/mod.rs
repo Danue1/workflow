@@ -24,13 +24,13 @@ pub enum Error {
 }
 
 pub fn mount(rocket: Rocket<Build>) -> Rocket<Build> {
-    let rocket = rocket.mount("/", routes![create_namespace]);
+    let rocket = rocket.mount("/", routes![namespace_list]);
 
     rocket
 }
 
 #[get("/api/namespaces?<cursor>&<limit>")]
-pub async fn create_namespace(
+pub async fn namespace_list(
     service: &State<infrastructure::namespace::NamespaceService>,
     cursor: Option<&str>,
     limit: Option<usize>,
@@ -49,7 +49,7 @@ pub async fn create_namespace(
             namespaces: output
                 .into_iter()
                 .map(|namespace| Namespace {
-                    namespace_id: namespace.id,
+                    namespace_id: namespace.namespace_id,
                     name: namespace.name,
                     created_at: namespace.created_at,
                 })
