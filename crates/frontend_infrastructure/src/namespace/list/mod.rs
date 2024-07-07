@@ -39,7 +39,8 @@ impl domain::find_namespaces::Port for Adapter {
                     n.name,
                     n.created_at
                 FROM namespace n
-                WHERE n.namespace_id = $1
+                WHERE ($1::UUID IS NOT NULL AND n.namespace_id > $1)
+                    OR ($1::UUID IS NULL)
                 ORDER BY n.namespace_id ASC
                 LIMIT $2
             "#,

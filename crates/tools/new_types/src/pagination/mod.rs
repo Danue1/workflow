@@ -23,7 +23,7 @@ impl Pagination {
 
 impl Size {
     pub fn new(value: usize) -> Self {
-        Self(value.min(1).max(50))
+        Self(value.clamp(1, 50))
     }
 
     pub const fn as_usize(&self) -> usize {

@@ -29,11 +29,11 @@ pub fn mount(rocket: Rocket<Build>) -> Rocket<Build> {
     rocket
 }
 
-#[get("/api/namespaces?<cursor>&<limit>")]
+#[get("/api/namespaces?<cursor>&<size>")]
 pub async fn namespace_list(
     service: &State<frontend_infrastructure::namespace::NamespaceService>,
     cursor: Option<&str>,
-    limit: Option<usize>,
+    size: Option<usize>,
 ) -> Result<Json<Response>, Error> {
     let cursor = match cursor {
         Some(cursor) if cursor.trim().is_empty() => None,
@@ -41,7 +41,7 @@ pub async fn namespace_list(
         None => None,
     };
     let input = domain::Input {
-        pagination: Pagination::from((cursor, limit)),
+        pagination: Pagination::from((cursor, size)),
     };
 
     match service.list(input).await {
