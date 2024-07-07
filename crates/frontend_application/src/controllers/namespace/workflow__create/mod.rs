@@ -27,13 +27,13 @@ pub enum Error {
 }
 
 pub fn mount(rocket: Rocket<Build>) -> Rocket<Build> {
-    let rocket = rocket.mount("/", routes![workflow_create]);
+    let rocket = rocket.mount("/", routes![workflow__create]);
 
     rocket
 }
 
 #[post("/api/namespaces/<namespace_id>/workflows", data = "<body>")]
-pub async fn workflow_create(
+pub async fn workflow__create(
     service: &State<frontend_infrastructure::namespace::NamespaceService>,
     namespace_id: &str,
     body: Json<Body>,

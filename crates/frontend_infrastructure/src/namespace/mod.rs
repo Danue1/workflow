@@ -3,6 +3,7 @@ pub mod list;
 pub mod one;
 pub mod remove;
 pub mod task_queue__create;
+pub mod task_queue__list;
 pub mod workflow__create;
 
 #[derive(Clone)]
@@ -47,6 +48,15 @@ impl NamespaceService {
         let pool = self.pool.clone();
 
         task_queue__create::execute(input, pool).await
+    }
+
+    pub async fn task_queue__list(
+        &self,
+        input: task_queue__list::Input,
+    ) -> Result<task_queue__list::Output, task_queue__list::Error> {
+        let pool = self.pool.clone();
+
+        task_queue__list::execute(input, pool).await
     }
 
     pub async fn workflow__create(

@@ -20,3 +20,17 @@ impl TaskQueueType {
         }
     }
 }
+
+impl std::str::FromStr for TaskQueueType {
+    type Err = ();
+
+    fn from_str(s: &str) -> Result<Self, Self::Err> {
+        match s {
+            "WORKFLOW" => Ok(TaskQueueType::Workflow),
+            "ACTIVITY" => Ok(TaskQueueType::Activity),
+            "SYSTEM" => Ok(TaskQueueType::System),
+            "BACKGROUND" => Ok(TaskQueueType::Background),
+            _ => Err(()),
+        }
+    }
+}

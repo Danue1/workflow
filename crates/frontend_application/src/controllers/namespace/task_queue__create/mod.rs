@@ -25,13 +25,13 @@ pub enum Error {
 }
 
 pub fn mount(rocket: Rocket<Build>) -> Rocket<Build> {
-    let rocket = rocket.mount("/", routes![task_queue_create]);
+    let rocket = rocket.mount("/", routes![task_queue__create]);
 
     rocket
 }
 
 #[post("/api/namespaces/<namespace_id>/task_queues", data = "<body>")]
-pub async fn task_queue_create(
+pub async fn task_queue__create(
     service: &State<frontend_infrastructure::namespace::NamespaceService>,
     namespace_id: &str,
     body: Json<Body>,
