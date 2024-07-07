@@ -1,5 +1,6 @@
 pub mod list;
 pub mod one;
+pub mod remove;
 
 #[derive(Clone)]
 pub struct WorkflowService {
@@ -22,5 +23,11 @@ impl WorkflowService {
         let pool = self.pool.clone();
 
         one::execute(input, pool).await
+    }
+
+    pub async fn remove(&self, input: remove::Input) -> Result<remove::Output, remove::Error> {
+        let pool = self.pool.clone();
+
+        remove::execute(input, pool).await
     }
 }
