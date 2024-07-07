@@ -2,6 +2,7 @@
 name = "frontend_domain"
 version = "0.1.0"
 edition = "2021"
+build = "build.rs"
 
 [dependencies]
 anyhow = { workspace = true }
@@ -11,3 +12,6 @@ new_types = { path = "../tools/new_types" }
 postgresql = { path = "../external/postgresql" }
 tokio = { workspace = true }
 uuid = { workspace = true }
+
+[build-dependencies]
+dotenvy = { workspace = true }

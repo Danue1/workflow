@@ -2,8 +2,12 @@
 name = "frontend_infrastructure"
 version = "0.1.0"
 edition = "2021"
+build = "build.rs"
 
 [dependencies]
 frontend_domain = { path = "../frontend_domain" }
 postgresql = { path = "../external/postgresql" }
 sqlx = { workspace = true }
+
+[build-dependencies]
+dotenvy = { workspace = true }

@@ -2,6 +2,7 @@
 name = "frontend_application"
 version = "0.1.0"
 edition = "2021"
+build = "build.rs"
 
 [dependencies]
 anyhow = { workspace = true }
@@ -15,3 +16,6 @@ rocket = { workspace = true }
 serde = { workspace = true }
 tokio = { workspace = true }
 uuid = { workspace = true }
+
+[build-dependencies]
+dotenvy = { workspace = true }

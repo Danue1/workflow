@@ -512,6 +512,7 @@ dependencies = [
  "chrono",
  "const_num",
  "domain",
+ "dotenvy",
  "frontend_infrastructure",
  "new_types",
  "postgresql",
@@ -528,6 +529,7 @@ dependencies = [
  "anyhow",
  "chrono",
  "domain",
+ "dotenvy",
  "new_types",
  "postgresql",
  "tokio",
@@ -538,6 +540,7 @@ dependencies = [
 name = "frontend_infrastructure"
 version = "0.1.0"
 dependencies = [
+ "dotenvy",
  "frontend_domain",
  "postgresql",
  "sqlx",
