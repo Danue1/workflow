@@ -60,7 +60,7 @@ impl domain::find_task_queues::Port for Adapter {
             .map(|row| domain::find_task_queues::TaskQueue {
                 task_queue_id: row.task_queue_id,
                 name: row.name,
-                r#type: row.r#type.parse().unwrap(),
+                r#type: row.r#type.into(),
                 created_at: row.created_at,
             })
             .collect();

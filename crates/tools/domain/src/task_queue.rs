@@ -8,6 +8,8 @@ pub enum TaskQueueType {
     System,
     #[serde(rename = "BACKGROUND")]
     Background,
+    #[serde(other)]
+    Unknown,
 }
 
 impl TaskQueueType {
@@ -17,20 +19,25 @@ impl TaskQueueType {
             TaskQueueType::Activity => "ACTIVITY",
             TaskQueueType::System => "SYSTEM",
             TaskQueueType::Background => "BACKGROUND",
+            TaskQueueType::Unknown => "UNKNOWN",
         }
     }
 }
 
-impl std::str::FromStr for TaskQueueType {
-    type Err = ();
+impl From<String> for TaskQueueType {
+    fn from(source: String) -> Self {
+        TaskQueueType::from(source.as_str())
+    }
+}
 
-    fn from_str(s: &str) -> Result<Self, Self::Err> {
-        match s {
-            "WORKFLOW" => Ok(TaskQueueType::Workflow),
-            "ACTIVITY" => Ok(TaskQueueType::Activity),
-            "SYSTEM" => Ok(TaskQueueType::System),
-            "BACKGROUND" => Ok(TaskQueueType::Background),
-            _ => Err(()),
+impl From<&str> for TaskQueueType {
+    fn from(source: &str) -> Self {
+        match source {
+            "WORKFLOW" => TaskQueueType::Workflow,
+            "ACTIVITY" => TaskQueueType::Activity,
+            "SYSTEM" => TaskQueueType::System,
+            "BACKGROUND" => TaskQueueType::Background,
+            _ => TaskQueueType::Unknown,
         }
     }
 }

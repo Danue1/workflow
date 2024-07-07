@@ -5,6 +5,7 @@ mod remove;
 mod task_queue__create;
 mod task_queue__list;
 mod workflow__create;
+mod workflow__list;
 
 use rocket::{Build, Rocket};
 
@@ -19,6 +20,7 @@ pub fn mount(rocket: Rocket<Build>, pool: &postgresql::ConnectionPool) -> Rocket
     let rocket = task_queue__create::mount(rocket);
     let rocket = task_queue__list::mount(rocket);
     let rocket = workflow__create::mount(rocket);
+    let rocket = workflow__list::mount(rocket);
 
     rocket
 }
