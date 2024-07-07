@@ -22,3 +22,12 @@ impl std::str::FromStr for Cron {
         ::cron::Schedule::from_str(s).map(Cron)
     }
 }
+
+impl serde::Serialize for Cron {
+    fn serialize<S>(&self, serializer: S) -> Result<S::Ok, S::Error>
+    where
+        S: serde::Serializer,
+    {
+        self.source().serialize(serializer)
+    }
+}

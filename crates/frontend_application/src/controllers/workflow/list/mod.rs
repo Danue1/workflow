@@ -1,4 +1,4 @@
-use frontend_infrastructure::namespace::workflow__list as domain;
+use frontend_infrastructure::workflow::list as domain;
 use new_types::{Cron, Pagination};
 use rocket::{serde::json::Json, Build, Rocket, State};
 use uuid::Uuid;
@@ -27,30 +27,27 @@ pub enum Error {
 }
 
 pub fn mount(rocket: Rocket<Build>) -> Rocket<Build> {
-    let rocket = rocket.mount("/", routes![workflow__list]);
+    let rocket = rocket.mount("/", routes![workflow_list]);
 
     rocket
 }
 
-#[get("/api/namespaces/<namespace_id>/workflows?<cursor>&<size>")]
-pub async fn workflow__list(
-    service: &State<frontend_infrastructure::namespace::NamespaceService>,
-    namespace_id: &str,
+#[get("/api/workflows?<cursor>&<size>")]
+pub async fn workflow_list(
+    service: &State<frontend_infrastructure::workflow::WorkflowService>,
     cursor: Option<&str>,
     size: Option<usize>,
 ) -> Result<Json<Response>, Error> {
-    let namespace_id = Uuid::parse_str(namespace_id).map_err(|_| Error::BadRequest(()))?;
     let cursor = match cursor {
         Some(cursor) if cursor.trim().is_empty() => None,
         Some(cursor) => Some(Uuid::parse_str(cursor).map_err(|_| Error::BadRequest(()))?),
         None => None,
     };
     let input = domain::Input {
-        namespace_id,
         pagination: Pagination::from((cursor, size)),
     };
 
-    match service.workflow__list(input).await {
+    match service.list(input).await {
         Ok(output) => Ok(Json(Response {
             workflows: output
                 .into_iter()
