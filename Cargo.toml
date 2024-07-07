@@ -3,15 +3,17 @@ resolver = "2"
 members = [
   "crates/external/database",
   "crates/external/postgresql",
-  "crates/frontend/application",
-  "crates/frontend/domain",
-  "crates/frontend/infrastructure",
+  "crates/frontend_application",
+  "crates/frontend_domain",
+  "crates/frontend_infrastructure",
   "crates/tools/const_num",
+  "crates/tools/domain",
   "crates/tools/new_types",
 ]
 
 [workspace.dependencies]
 anyhow = "1.0.83"
+assert_matches = "1.5.0"
 chrono = { version = "0.4.38", features = ["serde"] }
 cron = "0.12.1"
 dotenvy = "0.15.7"

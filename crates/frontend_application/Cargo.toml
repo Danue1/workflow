@@ -1,0 +1,16 @@
+[package]
+name = "frontend_application"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+const_num = { path = "../tools/const_num" }
+chrono = { workspace = true }
+domain = { path = "../tools/domain" }
+frontend_infrastructure = { path = "../frontend_infrastructure" }
+new_types = { path = "../tools/new_types" }
+postgresql = { path = "../external/postgresql" }
+rocket = { workspace = true }
+serde = { workspace = true }
+tokio = { workspace = true }
+uuid = { workspace = true }

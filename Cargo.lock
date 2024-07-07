@@ -386,11 +386,7 @@ dependencies = [
 name = "domain"
 version = "0.1.0"
 dependencies = [
- "anyhow",
- "chrono",
- "new_types",
- "postgresql",
- "tokio",
+ "serde",
  "uuid",
 ]
 
@@ -498,18 +494,41 @@ dependencies = [
 ]
 
 [[package]]
-name = "frontend-application"
+name = "frontend_application"
 version = "0.1.0"
 dependencies = [
  "chrono",
  "const_num",
- "infrastructure",
+ "domain",
+ "frontend_infrastructure",
  "new_types",
  "postgresql",
  "rocket",
  "serde",
  "tokio",
  "uuid",
+]
+
+[[package]]
+name = "frontend_domain"
+version = "0.1.0"
+dependencies = [
+ "anyhow",
+ "chrono",
+ "domain",
+ "new_types",
+ "postgresql",
+ "tokio",
+ "uuid",
+]
+
+[[package]]
+name = "frontend_infrastructure"
+version = "0.1.0"
+dependencies = [
+ "frontend_domain",
+ "postgresql",
+ "sqlx",
 ]
 
 [[package]]
@@ -842,15 +861,6 @@ dependencies = [
  "equivalent",
  "hashbrown",
  "serde",
-]
-
-[[package]]
-name = "infrastructure"
-version = "0.1.0"
-dependencies = [
- "domain",
- "postgresql",
- "sqlx",
 ]
 
 [[package]]

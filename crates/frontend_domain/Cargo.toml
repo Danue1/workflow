@@ -1,0 +1,13 @@
+[package]
+name = "frontend_domain"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+anyhow = { workspace = true }
+chrono = { workspace = true }
+domain = { path = "../tools/domain" }
+new_types = { path = "../tools/new_types" }
+postgresql = { path = "../external/postgresql" }
+tokio = { workspace = true }
+uuid = { workspace = true }
