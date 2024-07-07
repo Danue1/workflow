@@ -1,4 +1,5 @@
 pub mod list;
+pub mod one;
 
 #[derive(Clone)]
 pub struct WorkflowService {
@@ -15,5 +16,11 @@ impl WorkflowService {
         let pool = self.pool.clone();
 
         list::execute(input, pool).await
+    }
+
+    pub async fn one(&self, input: one::Input) -> Result<one::Output, one::Error> {
+        let pool = self.pool.clone();
+
+        one::execute(input, pool).await
     }
 }
