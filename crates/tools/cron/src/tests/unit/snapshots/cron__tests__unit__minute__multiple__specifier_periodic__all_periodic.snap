@@ -1,0 +1,20 @@
+---
+source: crates/tools/cron/src/tests/unit/minute.rs
+expression: result
+---
+Err(
+    Error(
+        Error {
+            inner: [
+                Invalid(
+                    "/2,*/2",
+                    '-',
+                ),
+                Nom(
+                    "1/2,*/2",
+                    Alt,
+                ),
+            ],
+        },
+    ),
+)

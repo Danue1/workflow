@@ -1,0 +1,28 @@
+---
+source: crates/tools/cron/src/tests/unit/month.rs
+expression: result
+---
+Err(
+    Error(
+        Error {
+            inner: [
+                Nom(
+                    "",
+                    Tag,
+                ),
+                Nom(
+                    "",
+                    Alt,
+                ),
+                Nom(
+                    "",
+                    Alt,
+                ),
+                Nom(
+                    "",
+                    Alt,
+                ),
+            ],
+        },
+    ),
+)

@@ -1,0 +1,28 @@
+---
+source: crates/tools/cron/src/tests/unit/week.rs
+expression: result
+---
+Err(
+    Error(
+        Error {
+            inner: [
+                Nom(
+                    "SUN-SUN/8",
+                    Tag,
+                ),
+                Nom(
+                    "SUN-SUN/8",
+                    Alt,
+                ),
+                Nom(
+                    "SUN-SUN/8",
+                    Alt,
+                ),
+                Nom(
+                    "SUN-SUN/8",
+                    Alt,
+                ),
+            ],
+        },
+    ),
+)

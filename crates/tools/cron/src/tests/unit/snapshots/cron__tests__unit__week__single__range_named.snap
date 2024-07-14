@@ -1,0 +1,28 @@
+---
+source: crates/tools/cron/src/tests/unit/week.rs
+expression: result
+---
+Err(
+    Error(
+        Error {
+            inner: [
+                Nom(
+                    "SUN-SAT",
+                    Tag,
+                ),
+                Nom(
+                    "SUN-SAT",
+                    Alt,
+                ),
+                Nom(
+                    "SUN-SAT",
+                    Alt,
+                ),
+                Nom(
+                    "SUN-SAT",
+                    Alt,
+                ),
+            ],
+        },
+    ),
+)

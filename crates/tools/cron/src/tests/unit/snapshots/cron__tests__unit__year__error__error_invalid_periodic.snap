@@ -1,0 +1,19 @@
+---
+source: crates/tools/cron/src/tests/unit/year.rs
+expression: result
+---
+Err(
+    Failure(
+        Error {
+            inner: [
+                Year(
+                    PeriodicLessThanOne,
+                ),
+                Nom(
+                    "0",
+                    MapRes,
+                ),
+            ],
+        },
+    ),
+)

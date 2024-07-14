@@ -1,0 +1,22 @@
+---
+source: crates/tools/cron/src/tests/unit/month.rs
+expression: result
+---
+Ok(
+    (
+        "",
+        MonthRule {
+            kinds: [
+                MonthKind {
+                    range: (
+                        February,
+                        February,
+                    ),
+                    periodic: MonthPeriodic(
+                        1,
+                    ),
+                },
+            ],
+        },
+    ),
+)

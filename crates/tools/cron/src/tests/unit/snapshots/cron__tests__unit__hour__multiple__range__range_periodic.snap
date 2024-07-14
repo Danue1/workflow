@@ -1,0 +1,39 @@
+---
+source: crates/tools/cron/src/tests/unit/hour.rs
+expression: result
+---
+Ok(
+    (
+        "",
+        HourRule {
+            kinds: [
+                HourKind {
+                    range: (
+                        Hour(
+                            1,
+                        ),
+                        Hour(
+                            23,
+                        ),
+                    ),
+                    periodic: HourPeriodic(
+                        1,
+                    ),
+                },
+                HourKind {
+                    range: (
+                        Hour(
+                            1,
+                        ),
+                        Hour(
+                            23,
+                        ),
+                    ),
+                    periodic: HourPeriodic(
+                        2,
+                    ),
+                },
+            ],
+        },
+    ),
+)

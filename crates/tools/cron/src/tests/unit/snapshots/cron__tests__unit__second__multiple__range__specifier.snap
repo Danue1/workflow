@@ -1,0 +1,26 @@
+---
+source: crates/tools/cron/src/tests/unit/second.rs
+expression: result
+---
+Ok(
+    (
+        ",1",
+        SecondRule {
+            kinds: [
+                SecondKind {
+                    range: (
+                        Second(
+                            1,
+                        ),
+                        Second(
+                            59,
+                        ),
+                    ),
+                    periodic: SecondPeriodic(
+                        1,
+                    ),
+                },
+            ],
+        },
+    ),
+)

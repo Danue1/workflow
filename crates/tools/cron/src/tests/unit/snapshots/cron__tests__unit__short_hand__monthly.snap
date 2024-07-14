@@ -1,0 +1,123 @@
+---
+source: crates/tools/cron/src/tests/unit/short_hand.rs
+expression: result
+---
+Ok(
+    (
+        "",
+        Schedule {
+            source: "@monthly",
+            second: SecondRule {
+                kinds: [
+                    SecondKind {
+                        range: (
+                            Second(
+                                0,
+                            ),
+                            Second(
+                                0,
+                            ),
+                        ),
+                        periodic: SecondPeriodic(
+                            1,
+                        ),
+                    },
+                ],
+            },
+            minute: MinuteRule {
+                kinds: [
+                    MinuteKind {
+                        range: (
+                            Minute(
+                                0,
+                            ),
+                            Minute(
+                                0,
+                            ),
+                        ),
+                        periodic: MinutePeriodic(
+                            1,
+                        ),
+                    },
+                ],
+            },
+            hour: HourRule {
+                kinds: [
+                    HourKind {
+                        range: (
+                            Hour(
+                                0,
+                            ),
+                            Hour(
+                                0,
+                            ),
+                        ),
+                        periodic: HourPeriodic(
+                            1,
+                        ),
+                    },
+                ],
+            },
+            date: DateRule {
+                kinds: [
+                    DateKind {
+                        range: (
+                            Date(
+                                1,
+                            ),
+                            Date(
+                                1,
+                            ),
+                        ),
+                        periodic: DatePeriodic(
+                            1,
+                        ),
+                    },
+                ],
+            },
+            week: WeekRule {
+                kinds: [
+                    WeekKind {
+                        range: (
+                            Sunday,
+                            Sunday,
+                        ),
+                        periodic: WeekPeriodic(
+                            1,
+                        ),
+                    },
+                ],
+            },
+            month: MonthRule {
+                kinds: [
+                    MonthKind {
+                        range: (
+                            January,
+                            December,
+                        ),
+                        periodic: MonthPeriodic(
+                            1,
+                        ),
+                    },
+                ],
+            },
+            year: YearRule {
+                kinds: [
+                    YearKind {
+                        range: (
+                            Year(
+                                1970,
+                            ),
+                            Year(
+                                2199,
+                            ),
+                        ),
+                        periodic: YearPeriodic(
+                            1,
+                        ),
+                    },
+                ],
+            },
+        },
+    ),
+)

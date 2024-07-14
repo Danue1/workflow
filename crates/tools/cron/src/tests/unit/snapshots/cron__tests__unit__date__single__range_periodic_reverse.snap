@@ -1,0 +1,26 @@
+---
+source: crates/tools/cron/src/tests/unit/date.rs
+expression: result
+---
+Ok(
+    (
+        "",
+        DateRule {
+            kinds: [
+                DateKind {
+                    range: (
+                        Date(
+                            31,
+                        ),
+                        Date(
+                            1,
+                        ),
+                    ),
+                    periodic: DatePeriodic(
+                        2,
+                    ),
+                },
+            ],
+        },
+    ),
+)

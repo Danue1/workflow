@@ -1,0 +1,39 @@
+---
+source: crates/tools/cron/src/tests/unit/year.rs
+expression: result
+---
+Ok(
+    (
+        "",
+        YearRule {
+            kinds: [
+                YearKind {
+                    range: (
+                        Year(
+                            2024,
+                        ),
+                        Year(
+                            2026,
+                        ),
+                    ),
+                    periodic: YearPeriodic(
+                        2,
+                    ),
+                },
+                YearKind {
+                    range: (
+                        Year(
+                            2028,
+                        ),
+                        Year(
+                            2028,
+                        ),
+                    ),
+                    periodic: YearPeriodic(
+                        2,
+                    ),
+                },
+            ],
+        },
+    ),
+)

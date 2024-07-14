@@ -1,0 +1,26 @@
+---
+source: crates/tools/cron/src/tests/unit/minute.rs
+expression: result
+---
+Ok(
+    (
+        "",
+        MinuteRule {
+            kinds: [
+                MinuteKind {
+                    range: (
+                        Minute(
+                            59,
+                        ),
+                        Minute(
+                            0,
+                        ),
+                    ),
+                    periodic: MinutePeriodic(
+                        1,
+                    ),
+                },
+            ],
+        },
+    ),
+)

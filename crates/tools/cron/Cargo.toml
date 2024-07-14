@@ -1,0 +1,9 @@
+[package]
+name = "cron"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+chrono = { workspace = true }
+insta = { workspace = true }
+nom = "7.1.3"

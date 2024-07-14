@@ -1,0 +1,23 @@
+---
+source: crates/tools/cron/src/tests/unit/year.rs
+expression: result
+---
+Err(
+    Error(
+        Error {
+            inner: [
+                Year(
+                    YearLessThan1970,
+                ),
+                Nom(
+                    "1969",
+                    MapRes,
+                ),
+                Nom(
+                    "1969",
+                    Alt,
+                ),
+            ],
+        },
+    ),
+)

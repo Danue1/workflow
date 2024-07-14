@@ -1,0 +1,16 @@
+---
+source: crates/tools/cron/src/tests/unit/date.rs
+expression: result
+---
+Err(
+    Failure(
+        Error {
+            inner: [
+                Nom(
+                    "invalid",
+                    Digit,
+                ),
+            ],
+        },
+    ),
+)

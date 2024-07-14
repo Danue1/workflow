@@ -1,0 +1,20 @@
+---
+source: crates/tools/cron/src/tests/unit/year.rs
+expression: result
+---
+Err(
+    Error(
+        Error {
+            inner: [
+                Nom(
+                    "",
+                    Digit,
+                ),
+                Nom(
+                    "",
+                    Alt,
+                ),
+            ],
+        },
+    ),
+)

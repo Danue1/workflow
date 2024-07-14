@@ -1,0 +1,28 @@
+---
+source: crates/tools/cron/src/tests/unit/week.rs
+expression: result
+---
+Err(
+    Error(
+        Error {
+            inner: [
+                Nom(
+                    "FRI",
+                    Tag,
+                ),
+                Nom(
+                    "FRI",
+                    Alt,
+                ),
+                Nom(
+                    "FRI",
+                    Alt,
+                ),
+                Nom(
+                    "FRI",
+                    Alt,
+                ),
+            ],
+        },
+    ),
+)
